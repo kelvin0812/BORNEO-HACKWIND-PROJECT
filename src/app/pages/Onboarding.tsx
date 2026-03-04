@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { Lock, ShieldCheck, ChevronRight, Fingerprint } from 'lucide-react';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { Card } from '../components/ui/Card';
+import { CustomButton as Button } from '../components/ui/custom-button';
+import { CustomInput as Input } from '../components/ui/custom-input';
+import { CustomCard as Card } from '../components/ui/custom-card';
 
 const goals = [
   { id: 'save', label: 'Save for Goals' },

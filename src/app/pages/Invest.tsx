@@ -103,16 +103,18 @@ export const Invest = () => {
       <div className="px-4 mb-6">
         <Card className="p-6 bg-white rounded-3xl shadow-sm border border-gray-100">
           <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">Asset Allocation</h3>
-          <div className="h-48 w-full flex items-center">
-            <ResponsiveContainer width="50%" height="100%">
-              <PieChart>
-                <Pie data={assetDistribution} innerRadius={40} outerRadius={60} paddingAngle={5} dataKey="value">
-                  {assetDistribution.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-              </PieChart>
-            </ResponsiveContainer>
+          <div className="h-48 w-full flex items-center" style={{ minHeight: '192px' }}>
+            <div className="w-1/2" style={{ height: '192px' }}>
+              <ResponsiveContainer width="100%" height="100%" minHeight={192}>
+                <PieChart>
+                  <Pie data={assetDistribution} innerRadius={40} outerRadius={60} paddingAngle={5} dataKey="value">
+                    {assetDistribution.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
+            </div>
             <div className="w-1/2 space-y-2">
               {assetDistribution.map((d, i) => (
                 <div key={d.name} className="flex items-center justify-between">
