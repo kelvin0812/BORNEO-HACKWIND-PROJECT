@@ -1,23 +1,39 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router';
 import { Onboarding } from './pages/Onboarding';
 import { Dashboard } from './pages/Dashboard';
 import { Coach } from './pages/Coach';
 import { DebtCalculator } from './pages/DebtCalculator';
 import { Learn } from './pages/Learn';
+import { Invest } from './pages/Invest';
+import { Profile } from './pages/Profile';
 import { Layout } from './Layout';
+import { FinanceProvider } from './context/FinanceContext';
 
-export default function App() {
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Layout,
+    children: [
+      { index: true, Component: Dashboard },
+      { path: "coach", Component: Coach },
+      { path: "debt", Component: DebtCalculator },
+      { path: "learn", Component: Learn },
+      { path: "invest", Component: Invest },
+      { path: "profile", Component: Profile },
+    ],
+  },
+  {
+    path: "/onboarding",
+    Component: Onboarding,
+  }
+]);
+
+function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/onboarding" element={<Onboarding />} />
-        <Route element={<Layout />}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/coach" element={<Coach />} />
-          <Route path="/debt" element={<DebtCalculator />} />
-          <Route path="/learn" element={<Learn />} />
-        </Route>
-      </Routes>
-    </Router>
+    <FinanceProvider>
+      <RouterProvider router={router} />
+    </FinanceProvider>
   );
 }
+
+export default App;
