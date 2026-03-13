@@ -1,3 +1,10 @@
+# Figma link
+https://top-side-11714235.figma.site
+
+# Pitch + Demo Video (Preliminary Round)
+https://youtu.be/YLcU71ekbBA
+
+
 # WealthWise AI
 
 A modern personal finance app for Gen-Z and Millennials that combines AI-driven coaching, budget tracking, and gamified educational experiences.
