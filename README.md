@@ -1,4 +1,4 @@
-# FinanceLens AI
+# WealthWise AI
 
 A modern personal finance app for Gen-Z and Millennials that combines AI-driven coaching, budget tracking, and gamified educational experiences.
 
