@@ -385,7 +385,7 @@ export const Profile = () => {
 
         <div className="text-center space-y-1 pb-10">
           <p className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em]">
-            FinanceLens AI v1.2.0
+            WealthWise AI v1.2.0
           </p>
           <p className="text-[10px] text-gray-500 font-medium">
             Crafted for the future of finance
